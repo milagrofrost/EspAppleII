@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="600" y="44" text-anchor="middle" font-size="28" font-weight="bold" fill="#111">EspAppleII hookup: a complete Apple II on one board</text>
+  <text x="600" y="74" text-anchor="middle" font-size="17" fill="#555">No real Apple II is involved. The ESP32 runs the whole machine; you only plug in a monitor, keyboard, speaker, SD card and USB.</text>
+
+  <!-- Board -->
+  <rect x="380" y="200" width="440" height="360" rx="18" fill="#1f2a36" stroke="#0d141b" stroke-width="3"/>
+  <text x="600" y="236" text-anchor="middle" font-size="21" font-weight="bold" fill="#ffffff">Olimex ESP32-SBC-FabGL</text>
+  <rect x="405" y="256" width="390" height="150" rx="10" fill="#2e3f52"/>
+  <text x="600" y="282" text-anchor="middle" font-size="17" font-weight="bold" fill="#ffd36b">ESP32 @ 240 MHz (dual core)</text>
+  <rect x="420" y="296" width="175" height="96" rx="8" fill="#3d5470"/>
+  <text x="507" y="320" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">Core 0</text>
+  <text x="507" y="342" text-anchor="middle" font-size="14" fill="#e6eef7">6502 / 65C02 CPU</text>
+  <text x="507" y="360" text-anchor="middle" font-size="14" fill="#e6eef7">memory, Disk II,</text>
+  <text x="507" y="378" text-anchor="middle" font-size="14" fill="#e6eef7">speaker @ 1.023 MHz</text>
+  <rect x="605" y="296" width="175" height="96" rx="8" fill="#3d5470"/>
+  <text x="692" y="320" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">Core 1</text>
+  <text x="692" y="342" text-anchor="middle" font-size="14" fill="#e6eef7">Apple II video</text>
+  <text x="692" y="360" text-anchor="middle" font-size="14" fill="#e6eef7">to VGA, PS/2</text>
+  <text x="692" y="378" text-anchor="middle" font-size="14" fill="#e6eef7">keyboard input</text>
+  <rect x="405" y="420" width="390" height="56" rx="10" fill="#2e3f52"/>
+  <text x="600" y="444" text-anchor="middle" font-size="16" font-weight="bold" fill="#9fe0a8">8 MB PSRAM</text>
+  <text x="600" y="464" text-anchor="middle" font-size="14" fill="#e6eef7">disk images (2 drives) + disk catalog, loaded from SD</text>
+  <rect x="405" y="488" width="390" height="56" rx="10" fill="#2e3f52"/>
+  <text x="600" y="512" text-anchor="middle" font-size="16" font-weight="bold" fill="#9fd0ff">Flash (firmware)</text>
+  <text x="600" y="532" text-anchor="middle" font-size="14" fill="#e6eef7">emulator + built-in Apple II+ and Disk II ROMs</text>
+
+  <!-- PS/2 keyboard (top) -->
+  <rect x="440" y="100" width="320" height="64" rx="10" fill="#efe6fb" stroke="#7b4fc4" stroke-width="2"/>
+  <text x="600" y="128" text-anchor="middle" font-size="18" font-weight="bold" fill="#3d1f73">PS/2 keyboard</text>
+  <text x="600" y="150" text-anchor="middle" font-size="14" fill="#3d1f73">keyboard port (PS/2 port 0): CLK GPIO33, DATA GPIO32</text>
+  <line x1="600" y1="166" x2="600" y2="198" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- VGA monitor (right) -->
+  <rect x="890" y="214" width="270" height="150" rx="10" fill="#e4efff" stroke="#2f6bd6" stroke-width="2"/>
+  <text x="1025" y="244" text-anchor="middle" font-size="18" font-weight="bold" fill="#123c80">VGA monitor</text>
+  <text x="1025" y="268" text-anchor="middle" font-size="14" fill="#123c80">320 x 200 @ 70 Hz, 16 colours</text>
+  <text x="1025" y="292" text-anchor="middle" font-size="13" fill="#123c80">R GPIO22/21  G GPIO19/18</text>
+  <text x="1025" y="312" text-anchor="middle" font-size="13" fill="#123c80">B GPIO5/4  HSYNC 23  VSYNC 15</text>
+  <text x="1025" y="342" text-anchor="middle" font-size="13" fill="#123c80">(FabGL default VGA pins)</text>
+  <line x1="822" y1="290" x2="886" y2="290" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- Audio (right bottom) -->
+  <rect x="890" y="410" width="270" height="110" rx="10" fill="#fff1e0" stroke="#d98a1f" stroke-width="2"/>
+  <text x="1025" y="440" text-anchor="middle" font-size="18" font-weight="bold" fill="#7a4705">Speaker / headphones</text>
+  <text x="1025" y="464" text-anchor="middle" font-size="14" fill="#7a4705">3.5 mm audio jack</text>
+  <text x="1025" y="488" text-anchor="middle" font-size="13" fill="#7a4705">1-bit Apple II speaker on GPIO25</text>
+  <line x1="822" y1="465" x2="886" y2="465" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- SD card (left top) -->
+  <rect x="40" y="214" width="290" height="160" rx="10" fill="#e8f7ea" stroke="#2f9a45" stroke-width="2"/>
+  <text x="185" y="244" text-anchor="middle" font-size="18" font-weight="bold" fill="#14551f">microSD card (FAT32)</text>
+  <text x="60" y="272" font-size="13" font-family="Menlo, Consolas, monospace" fill="#14551f">/apple2/disks/</text>
+  <text x="76" y="292" font-size="13" font-family="Menlo, Consolas, monospace" fill="#14551f">apple2-index.txt</text>
+  <text x="76" y="312" font-size="13" font-family="Menlo, Consolas, monospace" fill="#14551f">*.dsk (140K, DOS order)</text>
+  <text x="60" y="336" font-size="13" font-family="Menlo, Consolas, monospace" fill="#14551f">/apple2/roms/ (optional)</text>
+  <text x="76" y="356" font-size="13" font-family="Menlo, Consolas, monospace" fill="#14551f">apple2e*.rom for IIe</text>
+  <line x1="332" y1="294" x2="376" y2="294" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- USB (left bottom) -->
+  <rect x="40" y="410" width="290" height="110" rx="10" fill="#f0f0f0" stroke="#666" stroke-width="2"/>
+  <text x="185" y="440" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">USB to your PC</text>
+  <text x="185" y="464" text-anchor="middle" font-size="14" fill="#222">power, flashing (Arduino IDE)</text>
+  <text x="185" y="488" text-anchor="middle" font-size="14" fill="#222">serial log at 115200 baud</text>
+  <line x1="334" y1="465" x2="376" y2="465" stroke="#333" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+
+  <!-- What it emulates -->
+  <rect x="40" y="592" width="1120" height="140" rx="12" fill="#fafafa" stroke="#bbb" stroke-width="1.5"/>
+  <text x="60" y="624" font-size="18" font-weight="bold" fill="#111">What the firmware emulates</text>
+  <text x="60" y="652" font-size="15" fill="#333">Apple II+ 64K (built in)  ·  Apple IIe 128K and Enhanced IIe 128K (65C02) if you supply the 16K IIe ROM files on the SD card</text>
+  <text x="60" y="678" font-size="15" fill="#333">Two Disk II drives in slot 6 (read-only)  ·  text, lo-res, hi-res, mixed mode, pages 1/2  ·  IIe: 80-column, double lo-res and double hi-res</text>
+  <text x="60" y="704" font-size="15" fill="#333">Joystick on the arrow keys + Space  ·  Ctrl+Alt+Del: pick a new disk and cold boot  ·  Ctrl+Alt+S: swap the disk in drive 1 without resetting</text>
+</svg>
