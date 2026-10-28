@@ -45,20 +45,20 @@ You need:
 - A microSD card formatted FAT32
 - A USB cable to a computer, for power, flashing and the serial log
 
-![ESP32-SBC-FabGL connected to VGA, PS/2, audio and USB](Imagens/Esp32_Front.jpeg)
+![Olimex ESP32-SBC-FabGL with its connectors labelled](Imagens/ESP32-SBC-FabGL-labeled.png)
 
 Every connector is already on the board, so there is nothing to solder or wire. Plug things in like this:
 
 | Connector on the board | Plug in | ESP32 pins used by the firmware |
 | --- | --- | --- |
 | VGA (DE-15) | Monitor | Red GPIO22/21, Green GPIO19/18, Blue GPIO5/4, HSync GPIO23, VSync GPIO15 (FabGL defaults) |
-| PS/2 port 0 | Keyboard | CLK GPIO33, DATA GPIO32 (`PS2Preset::KeyboardPort0`) |
-| PS/2 port 1 | Nothing (unused) | GPIO26/27 |
+| PS/2 port labelled **PS2 keyboard** | Keyboard | CLK GPIO33, DATA GPIO32 (`PS2Preset::KeyboardPort0`) |
+| PS/2 port labelled **PS2 mouse** | Nothing (unused) | GPIO26/27 |
 | 3.5 mm audio | Speakers or headphones | GPIO25 (`SPEAKER_PIN` in `speaker.ino`) |
 | microSD slot | SD card with the `apple2` folder | FabGL `mountSDCard()` defaults: CS GPIO13, CLK GPIO14; MOSI/MISO are picked by FabGL for the board's ESP32 package |
-| USB | Computer or USB power supply | Power, upload, and serial log at 115200 baud |
+| USB-C | Computer or USB power supply | Power, upload, and serial log at 115200 baud |
 
-If the keyboard does nothing, it is probably in the other PS/2 port. The pin numbers are here for reference and for anyone porting to another FabGL-compatible board; check the Olimex schematic before relying on them for custom wiring.
+If the keyboard does nothing, check that it is in the **PS2 keyboard** port, not the mouse port. The pin numbers are here for reference and for anyone porting to another FabGL-compatible board; check the Olimex schematic before relying on them for custom wiring.
 
 ## Building and flashing
 
